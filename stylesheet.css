@@ -49,6 +49,7 @@ body, .header {
 }
 
 @media screen and (max-width: 800px) {/**/
+
     .header a, .header-right{/**/
         font-size: 16px;
     }
@@ -73,32 +74,70 @@ body, .header {
     padding: 20px 10px;
 }
 
-.footer, .header, .header-right{
+.footer, .header, .header-right{/*to fix some responsive issues*/
     min-width: 400px;
 }
 
-.carousel-container, .login-container, .register-container{
+.carousel-container, .login-container, .register-container, .create-title{
     position: relative;
     margin: auto;
-    min-height: 350px;
-    height: 500px;
     margin-top: 10px;
+}
+
+.carousel-container, .login-container, .register-container, .create-container{
+    height: 500px;
+    min-height: 350px;
+}
+
+.create-title{
+    height: 100px;
 }
 
 .carousel-container{
     max-width: 400px;
 }
 
-.login-container, .register-container {
-    background-color: #D9D9D9;
+.login-container, .register-container, .create-container, .create-title {
     margin-bottom: 10px;
+    min-width: 350px;
+}
+
+.login-container, .register-container, .create-content, .create-title{
+    background-color: #D9D9D9;
+}
+
+.login-container, .register-container, .create-container{
     max-width: 50%;
     min-width: 350px;
 }
 
-.login-title, .register-title{
+.create-content{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.create-title{
+    max-width: 20%;
+}
+
+.login-title, .register-title, .create-title, .create-title-blog{
     text-align: center;
+}
+
+.login-title, .register-title{
     padding-top: 10%;
+}
+
+.create-title{
+    padding-top: 0.5%;
+    border-radius: 5px;
+}
+
+.create-title-blog{
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .login-content, .register-content{
@@ -125,7 +164,7 @@ font-family: Arial, sans-serif;
     object-position: top;
 }
 
-.prev, .next{
+.prev, .next{/*next and prev button*/
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -140,16 +179,16 @@ font-family: Arial, sans-serif;
     user-select: none;
 }
 
-.next{
+.next{ /*next button*/
     right: 0;
     border-radius: 3px 0 0 3px;
 }
 
-.prev:hover, .next:hover{
+.prev:hover, .next:hover{ /*this is the hover color for button in the carousel*/
     background-color:#C1CFDA;
 }
 
-.text{
+.text{ /*this is the text under the picture in the carousel*/
     color:black;
     background-color: #C1CFDA;
     font-size: 15px;
@@ -160,7 +199,7 @@ font-family: Arial, sans-serif;
     text-align: center;
 }
 
-.dot{
+.dot{ /*this is the 3 dots under the carousel*/
     cursor: pointer;
     height: 15px;
     width: 15px;
@@ -171,19 +210,28 @@ font-family: Arial, sans-serif;
     transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover{
+.active, .dot:hover{/*this is the active dot under the carousel*/
     background-color: blue;
 }
 
 
-.grid-container { /*this is the grid container for the posts*/
+.grid-container, .create-container { /*this is the grid container for the posts*/
     display:grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     max-width: 90%;
     margin: 0 auto;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.grid-container{
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.create-container{
+    grid-template-columns: repeat(2, 1fr);
+    min-height: 250px;
+    max-width: 50%;
 }
 
 .post{ /*this is for the grid items and if the content dont load in then you will see the skeleton/background of the behind of the posts*/
@@ -192,7 +240,7 @@ font-family: Arial, sans-serif;
     text-align: center;
 }
 
-.post img{
+.post img{/*image adjustment*/
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;

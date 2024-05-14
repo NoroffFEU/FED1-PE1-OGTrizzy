@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="this is the create post page">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GymRat Create Post</title>
+  <link rel="stylesheet" href="../stylesheet.css">
+  <script defer src="../postscript.js"></script>
+</head>
+
+<body>
+        <!-- Navbar -->
+    <div class="header">
+      <a href="../index.html" class="logo">GymRat</a>
+      <div class="header-right">
+        <a href="../index.html">Home</a>
+        <a href="../account/Login.html">Login</a>
+        <a href="../account/register.html">Register</a>
+        <a class="active" href="../post/create.html">Create Post</a>
+      </div>
+    </div>
+
+    
+        <div class="create-title"><h1>Create a post</h1></div>
+        <div class="create-container">
+            <div class="create-content">
+                <div class="create-title-blog">Upload Image</div>
+                <input id="imageInput" type="file" accept="image/*">
+            </div>
+            <div class="create-content">
+                <div class="create-title-blog">Blog Text</div>
+                <textarea id="textInput" rows="20" cols="50"></textarea><br><br>
+                <button onclick="sendPost(document.getElementById('imageInput').value, document.getElementById('textInput').value)">post</button>
+            </div>
+        </div>
+
+    <div class="footer">
+      &copy; GymRat Inc. All rights reserved.<br />
+    </div>
+
+
+</body>
+</html>
