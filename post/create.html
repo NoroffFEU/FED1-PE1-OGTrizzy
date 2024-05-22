@@ -23,17 +23,21 @@
 
     
         <div class="create-title"><h1>Create a post</h1></div>
-        <div class="create-container">
-            <div class="create-content">
-                <div class="create-title-blog">Upload Image</div>
-                <input id="imageInput" type="file" accept="image/*">
-            </div>
-            <div class="create-content">
-                <div class="create-title-blog">Blog Text</div>
-                <textarea id="textInput" rows="20" cols="50"></textarea><br><br>
-                <button onclick="sendPost(document.getElementById('imageInput').value, document.getElementById('textInput').value)">post</button>
-            </div>
+      <div class="create-container">
+        <div class="create-content">
+            <div class="create-title-blog">Image URL</div>
+            <input id="imageInput" type="text">
+            <div class="create-title-blog">Image ALT</div>
+            <input id="altInput" type="text">
+            <div class="create-title-blog">Blog Title</div>
+            <input id="titleInput" type="text">
         </div>
+        <div class="create-content">
+            <div class="create-title-blog">Blog Text</div>
+            <textarea id="textInput" rows="20" cols="50"></textarea><br><br>
+            <button>post</button>
+        </div>
+      </div>
 
     <div class="footer">
       &copy; GymRat Inc. All rights reserved.<br />

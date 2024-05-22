@@ -1,25 +1,3 @@
-// save api key
-var accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVHJpc3RpYW4iLCJlbWFpbCI6InRyaW9leTAwMjAwQHN0dWQubm9yb2ZmLm5vIiwiaWF0IjoxNzE1NjgyOTcxfQ.axHQG7b5ubhDaT9WSYqB-SSI1UXNgu29YpNkMp-DAcg";
-
-// function to send a request to api
-function callApi(endpoint, token) {
-  var headers = new Headers();
-  headers.append("Authorization", "Bearer " + token);
-
-  var options = {
-    method: 'GET',
-    headers: headers
-  };
-
-  fetch(endpoint, options)
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.error('Error:', error));
-}
-
-// call the api with the key
-callApi('https://v2.api.noroff.dev/blog/posts/tristian', accessToken);
-
 //login function
 function login(email, password){
     var data = {
@@ -33,10 +11,20 @@ function login(email, password){
         body: JSON.stringify(data)
     };
     
-    fetch('https://v2.api.noroff.dev/blog/posts/tristian', options)
-    .then(response => response.json())
+    //fetch the api
+    fetch('https://v2.api.noroff.dev/auth/login', options)
+    .then(response => {
+        if (response.ok) {
+            console.log('Login was success!');
+            alert('Login was success!')
+            return response.json();
+        } else {
+            console.log('Login failed.');
+            throw new Error('Login failed.');
+        }
+    })
     .then(data => {
-        localStorage.setItem('accessToken', data.accessToken);
+        localStorage.setItem('accessToken', data.data.accessToken);
     })
     .catch(error => console.error('Error:', error));
 }
@@ -53,4 +41,4 @@ function handleLogin(){
     });
 }
 
-window.addEventListener('DOMcontentLoaded', handleLogin)
+window.addEventListener('DOMContentLoaded', handleLogin);

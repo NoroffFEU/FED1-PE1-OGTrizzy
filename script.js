@@ -1,7 +1,18 @@
 let url = "https://v2.api.noroff.dev/blog/posts/tristian";
 fetch(url)
 .then((response) => response.json())
-.then(data => console.log(data))
+.then(data => {
+  console.log(data);
+  let post = document.getElementsByClassName('post');
+
+  for (let i = data.data.length -1, j = 0; i >= 0 && j < post.length; i--, j++){
+    let img = document.createElement('img');
+    img.src = data.data[i].media.url;
+    img.alt = data.data[i].media.alt;
+
+    post[j].appendChild(img);//this is to put the img to the post thing
+  }
+})
 .catch(error => console.error('Error:', error));
 
 
