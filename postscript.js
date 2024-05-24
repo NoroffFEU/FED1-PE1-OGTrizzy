@@ -1,7 +1,7 @@
 let url = "https://v2.api.noroff.dev/blog/posts/tristian";
 window.onload = function() {
     // function for deliver the post to the api
-    function sendPost(image, text, title) {
+    function sendPost(image, text, alt, title) {
       let data = { 
         title: title, 
         body: text, 

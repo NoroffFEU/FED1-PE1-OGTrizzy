@@ -78,18 +78,24 @@ body, .header {
     min-width: 400px;
 }
 
-.carousel-container, .login-container, .register-container, .create-title{
+#textInput{
+    width: 100%;
+    max-width: 100%;
+    max-height: 80%;
+}
+
+.carousel-container, .login-container, .register-container, .create-title, .see-post-title, .edit-title{
     position: relative;
     margin: auto;
     margin-top: 10px;
 }
 
-.carousel-container, .login-container, .register-container, .create-container{
+.carousel-container, .login-container, .register-container, .create-container, .see-post-container, .edit-container{
     height: 500px;
     min-height: 350px;
 }
 
-.create-title{
+.create-title, .see-post-title, .edit-title{
     height: 100px;
 }
 
@@ -97,30 +103,30 @@ body, .header {
     max-width: 400px;
 }
 
-.login-container, .register-container, .create-container, .create-title {
+.login-container, .register-container, .create-container, .create-title, .see-post-title, .see-post-container, .edit-title, .edit-container {
     margin-bottom: 10px;
     min-width: 350px;
 }
 
-.login-container, .register-container, .create-content, .create-title{
+.login-container, .register-container, .create-content, .create-title, .see-post-title, .see-post-content, .edit-title, .edit-content{
     background-color: #D9D9D9;
 }
 
-.login-container, .register-container, .create-container{
+.login-container, .register-container, .create-container, .see-post-container, .edit-container{
     max-width: 50%;
     min-width: 350px;
 }
 
-.create-content{
+.create-content, .see-post-content, .edit-content{
     padding-left: 15px;
     padding-right: 15px;
 }
 
-.create-title{
+.create-title, .see-post-title, .edit-title{
     max-width: 20%;
 }
 
-.login-title, .register-title, .create-title, .create-title-blog{
+.login-title, .register-title, .create-title, .create-title-blog, .see-post-title, .edit-title, .edit-title-blog{
     text-align: center;
 }
 
@@ -128,12 +134,12 @@ body, .header {
     padding-top: 10%;
 }
 
-.create-title{
+.create-title, .see-post-title, .edit-title, .edit-title-blog{
     padding-top: 0.5%;
     border-radius: 5px;
 }
 
-.create-title-blog{
+.create-title-blog, .edit-title-blog{
     font-size: 18px;
     font-weight: bold;
     margin-top: 10px;
@@ -215,7 +221,7 @@ font-family: Arial, sans-serif;
 }
 
 
-.grid-container, .create-container { /*this is the grid container for the posts*/
+.grid-container, .create-container, .see-post-container, .edit-container { /*this is the grid container for the posts*/
     display:grid;
     gap: 10px;
     max-width: 90%;
@@ -228,7 +234,7 @@ font-family: Arial, sans-serif;
     grid-template-columns: repeat(3, 1fr);
 }
 
-.create-container{
+.create-container, .see-post-container, .edit-container{
     grid-template-columns: repeat(2, 1fr);
     min-height: 250px;
     max-width: 50%;
