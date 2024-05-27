@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GymRat Post index</title>
   <link rel="stylesheet" href="../stylesheet.css">
-  <script defer src="***"></script>
+  <script defer src="../postindex.js"></script>
 </head>
 
 <body>
@@ -21,13 +21,14 @@
           </div>
         </div>
 
-      <div class="see-post-title"><h1>post title</h1></div>
+      <div class="see-post-title" id="title"><h1></h1></div>
       <div class="see-post-container">
         <div class="see-post-content">
-          
+          <img id="image" class="see-post-img">
         </div>
         <div class="see-post-content">
-            <a href="../post/edit.html"><button>edit</button></a>
+          <pre id="blog-text"></pre>
+          <a id="editButton"><button>edit</button></a>
         </div>
       </div>
 

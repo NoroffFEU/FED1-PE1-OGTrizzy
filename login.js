@@ -24,7 +24,9 @@ function login(email, password){
         }
     })
     .then(data => {
+        console.log(data);
         localStorage.setItem('accessToken', data.data.accessToken);
+        localStorage.setItem('user', JSON.stringify(data.data));
     })
     .catch(error => console.error('Error:', error));
 }

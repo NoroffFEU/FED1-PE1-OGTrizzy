@@ -1,4 +1,3 @@
-let url = "https://v2.api.noroff.dev/blog/posts/tristian";
 window.onload = function() {
     // function for deliver the post to the api
     function sendPost(image, text, alt, title) {
@@ -12,6 +11,8 @@ window.onload = function() {
       };
 
       let accessToken = localStorage.getItem('accessToken');
+      let user = JSON.parse(localStorage.getItem('user'));
+      let url = `https://v2.api.noroff.dev/blog/posts/${user.name}`;
   
       fetch(url, {
         method: 'POST',
@@ -21,9 +22,20 @@ window.onload = function() {
         },
         body: JSON.stringify(data),
       })
-      .then((response) => response.json())
-      .then(data => console.log(data))
-      .catch((error) => console.error('Error:', error));
+      .then((response) => {
+        if (!response.ok){
+            throw new Error('network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);
+        alert('Posted successfully!');
+    })
+    .catch(error => {
+        console.error('error:', error);
+        alert('Posting failed');
+})
     }
   
     // adds a eventlistener for post button
