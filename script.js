@@ -12,7 +12,7 @@ fetch(url)
     let title = document.createElement('h2');
     title.textContent = data.data[i].title; //text for title under images when post are showing
     let link = document.createElement('a');
-    link.href = `../post/index.html?id=${data.data[i].id}`; //link to post
+    link.href = `post/index.html?id=${data.data[i].id}`; //link to post
     link.appendChild(img);
     link.appendChild(title);
 
@@ -65,7 +65,7 @@ fetch(url)
 
       [img, text].forEach(element => {
           element.addEventListener('click',()=> {
-          window.location.href = `../post/index.html?id=${data.data[i].id}`;
+          window.location.href = `post/index.html?id=${data.data[i].id}`;
         });
       element.style.cursor = 'pointer';
       });
