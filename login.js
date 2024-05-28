@@ -16,15 +16,14 @@ function login(email, password){
     .then(response => {
         if (response.ok) {
             console.log('Login was success!');
-            alert('Login was success!')
+            alert('Login was success!');
             return response.json();
         } else {
             console.log('Login failed.');
-            throw new Error('Login failed.');
+            alert('Login failed.');
         }
     })
     .then(data => {
-        console.log(data);
         localStorage.setItem('accessToken', data.data.accessToken);
         localStorage.setItem('user', JSON.stringify(data.data));
     })
