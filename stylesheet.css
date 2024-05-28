@@ -74,11 +74,14 @@ body{
 /*here header section ends*/
 
 .footer { /*this is the footer*/
-    margin-top: auto;
+    position:fixed;
+    bottom:0;
+    width:100%;
     background-color: black;
     color: white;
     font-size: 1.5vh;
     padding: 20px 10px;
+    z-index: 10;
 }
 
 .footer, .header, .header-right{/*to fix some responsive issues*/
